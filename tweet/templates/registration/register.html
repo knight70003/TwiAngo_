@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %} 
+ <body id ="bg" style="background-image: url('{% static 'image/font.jpg' %}'); background-size: cover;">
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-primary">Register</button>
+    </form>
+</body>
+{% endblock %}
