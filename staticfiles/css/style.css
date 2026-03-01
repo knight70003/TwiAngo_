@@ -1,0 +1,8 @@
+#body{
+border-block:double;
+background-image: url("/chaiheadq/static/images/font.jpg"), url("/chaiheadq/static/images/back.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+border: 4mm ridge rgba(135, 206, 235, 0.6);
+}
