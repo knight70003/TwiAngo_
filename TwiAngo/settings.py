@@ -29,8 +29,8 @@ SECRET_KEY = 'django-insecure-ds7==41zl15qcw$atft##%@ylj)t@^#!#e#@-h4_(w$7x0@!02
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ["*"]
+CSRF_TRUSTED_ORIGINS = ['https://*.onrender.com']
 
 # Application definition
 
@@ -135,3 +135,5 @@ LOGIN_URL='/accounts/login'
 
 LOGIN_REDIRECT_URL = 'tweet_list'
 LOGOUT_REDIRECT_URL = 'tweet_list'
+
+CSRF_TRUSTED_ORIGINS = ['https://*.onrender.com']
