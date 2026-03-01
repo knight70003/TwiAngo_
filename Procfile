@@ -1,1 +1,1 @@
-web: gunicorn TwiAngo.wsgi:application
+web: gunicorn chaiheadq.wsgi
