@@ -1,41 +1,63 @@
-TwiAngo - Twitter Clone Project
+TwiAngo - Twitter Clone Using Django
 
-A Django-based Twitter clone that allows users to create, edit, delete, and search tweets.
+A full-stack Twitter-inspired social media web application built using Django.
+TwiAngo enables users to create, edit, delete, and search tweets with secure authentication and a clean user experience.
 
-Table of Contents
+---
 
-Overview
-Features
-Tech Stack
-Project Structure
-Installation
-Usage
+🚀 Features
+
+- 🔐 User Authentication (Register, Login, Logout)
+- 📝 Create Tweets with Text & Images
+- ✏️ Edit Your Tweets
+- ❌ Delete Your Tweets
+- 📰 Chronological Tweet Feed
+- 🔎 Search Tweets by Keywords
+- 👤 User-specific Tweet Management
+- 📱 Responsive User Interface
+- ☁️ Deployment Ready with Render
+
+---
+
+🛠️ Tech Stack
+
+Backend
+
+- Python
+- Django
+
+Frontend
+
+- HTML5
+- CSS3
+- JavaScript
+
+Database
+
+- SQLite (Development)
+- PostgreSQL (Production)
+
 Deployment
-Contributing
-License
-Overview
 
-Tiwango is a micro-blogging social media platform built with Django. It allows users to share thoughts (tweets), interact with other users, and explore content through search functionality.
+- Render
 
-Features
+Authentication
 
-User Authentication - Register, login, and logout functionality Create Tweets - Post new tweets with text and images Edit Tweets - Modify your own tweets Delete Tweets - Remove your own tweets Tweet Feed - View all tweets in chronological order (newest first) Search - Search tweets by content User Profiles - User-specific tweet management
+- Django Authentication System
 
-Tech Stack
+---
 
-Backend - Python, Django Database - SQLite (dev) / PostgreSQL (prod) Frontend - HTML, CSS, JavaScript Deployment - Render Authentication - Django Auth
-
-Project Structure
+📂 Project Structure
 
 twiango/
-├── twiango/              # Main Django project
+├── twiango/                  # Main Django project
 │   ├── __init__.py
 │   ├── settings.py
 │   ├── urls.py
 │   └── wsgi.py
-├── core/                  # Main app
+│
+├── core/                     # Main application
 │   ├── migrations/
-│   ├── __init__.py
 │   ├── admin.py
 │   ├── apps.py
 │   ├── forms.py
@@ -43,7 +65,8 @@ twiango/
 │   ├── tests.py
 │   ├── urls.py
 │   └── views.py
-├── templates/             # HTML templates
+│
+├── templates/                # HTML templates
 │   ├── base.html
 │   ├── index.html
 │   ├── tweet_list.html
@@ -51,117 +74,209 @@ twiango/
 │   ├── tweet_confirm_delete.html
 │   ├── search_results.html
 │   └── registration/
-├── static/                # CSS, JS, images
+│
+├── static/                   # Static assets
 ├── manage.py
 ├── requirements.txt
 └── README.md
 
-Installation
+---
 
-Prerequisites
+⚙️ Installation & Setup
 
-Python 3.8+ pip (Python package manager)
+1️⃣ Clone the Repository
 
-Step 1: Clone the Repository
+git clone <your-repository-url>
+cd twiango
 
-git clone <your-repo-url> cd twiango
+---
 
-Step 2: Create a Virtual Environment
+2️⃣ Create Virtual Environment
 
 Windows
-python -m venv venv venv\Scripts\activate
+
+python -m venv venv
+venv\Scripts\activate
 
 macOS/Linux
-python3 -m venv venv source venv/bin/activate
 
-Step 3: Install Dependencies
+python3 -m venv venv
+source venv/bin/activate
+
+---
+
+3️⃣ Install Dependencies
 
 pip install -r requirements.txt
 
-Step 4: Run Migrations
+---
+
+4️⃣ Apply Database Migrations
 
 python manage.py migrate
 
-Step 5: Start the Development Server
+---
+
+5️⃣ Run Development Server
 
 python manage.py runserver
 
-Step 6: Access the Application
+---
 
-Open your browser and visit: http://127.0.0.1:8000
+6️⃣ Open the Application
 
-Usage
+Visit:
 
-Home Page Visit http://127.0.0.1:8000 to see the landing page.
+http://127.0.0.1:8000
 
-View All Tweets Go to http://127.0.0.1:8000/tweets/ to see all tweets.
+---
 
-Create a Tweet
+📸 Application Functionalities
 
-Navigate to /tweets/create/
-Fill out the tweet form
-Click "Post Tweet"
-Edit Your Tweet
+🏠 Home Page
 
-Go to your tweet in the list
-Click "Edit" on your own tweet
-Modify the content
-Click "Save Changes"
-Delete a Tweet
+Displays the landing page and navigation system.
 
-Go to your tweet in the list
-Click "Delete"
-Confirm the deletion
-User Registration
+---
 
-Visit /register/
-Fill in username, email, and password
-Click "Sign Up"
-Search Tweets
+📰 Tweet Feed
 
-Use the search bar on the site
-Or visit /search/?search=<your-query>
-Deployment
+View all tweets in reverse chronological order.
 
-Deploying to Render
+/tweets/
 
-Push your code to GitHub
+---
 
-Create a new Web Service on Render
+✍️ Create Tweet
 
-Connect your GitHub repository
-Select the correct branch (usually main)
-Configure Environment Variables DATABASE_URL - PostgreSQL connection string SECRET_KEY - Your Django secret key DEBUG - False ALLOWED_HOSTS - twiango.onrender.com
+/tweets/create/
 
-Set Build Command pip install -r requirements.txt && python manage.py migrate && python manage.py collectstatic --noinput
+Users can:
 
-Set Start Command gunicorn twiango.wsgi
+- Write tweet content
+- Upload images
+- Post tweets instantly
 
-Deploy!
-Your app will be live at https://twiango.onrender.com
+---
 
-Management Commands
+✏️ Edit Tweet
 
-Create migrations
+Users can edit only their own tweets.
+
+---
+
+❌ Delete Tweet
+
+Users can securely delete their own tweets.
+
+---
+
+🔎 Search Tweets
+
+/search/?search=<query>
+
+Search tweets using keywords and phrases.
+
+---
+
+👤 User Authentication
+
+Register
+
+/register/
+
+Login
+
+/accounts/login/
+
+Logout
+
+/accounts/logout/
+
+---
+
+☁️ Deployment on Render
+
+Step 1: Push Code to GitHub
+
+Push your complete project to GitHub.
+
+---
+
+Step 2: Create Render Web Service
+
+- Connect GitHub Repository
+- Select the appropriate branch
+
+---
+
+Step 3: Configure Environment Variables
+
+DATABASE_URL=your_postgresql_url
+SECRET_KEY=your_secret_key
+DEBUG=False
+ALLOWED_HOSTS=twiango.onrender.com
+
+---
+
+Step 4: Build Command
+
+pip install -r requirements.txt && python manage.py migrate && python manage.py collectstatic --noinput
+
+---
+
+Step 5: Start Command
+
+gunicorn twiango.wsgi
+
+---
+
+🧑‍💻 Management Commands
+
+Create Migrations
+
 python manage.py makemigrations
 
-Apply migrations
+Apply Migrations
+
 python manage.py migrate
 
-Create superuser
+Create Superuser
+
 python manage.py createsuperuser
 
-Collect static files
+Collect Static Files
+
 python manage.py collectstatic --noinput
 
-Contributing
--Fork the repository
--Create a new branch (git checkout -b feature/your-feature)
--Commit your changes (git commit -m 'Add some feature')
--Push to the branch (git push origin feature/your-feature)
--Open a Pull Request
+---
 
-License
-This project is open-source and available under the MIT License.
+📈 Future Improvements
 
+- ❤️ Like & Unlike Tweets
+- 💬 Comment System
+- 🔔 Notifications
+- 👥 Follow/Unfollow Users
+- 📷 Profile Pictures
+- 🌙 Dark Mode
+- 📱 REST API Integration
+- ⚡ Real-time Chat Features
 
+---
+
+🤝 Contributing
+
+Contributions are welcome.
+
+1. Fork the repository
+2. Create a new feature branch
+
+git checkout -b feature/your-feature
+
+3. Commit your changes
+
+git commit -m "Add new feature"
+
+4. Push to GitHub
+
+git push origin feature/y
